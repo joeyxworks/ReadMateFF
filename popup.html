@@ -1,0 +1,108 @@
+<!-- popup.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ReadMate</title>
+  <style>
+    /* body {
+      min-width: 250px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    } */
+    /* h1 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+    } */
+    .version {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .settings {
+      margin-top: 20px;
+    }
+    .settings label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    .settings input[type="number"] {
+      width: 50px;
+      margin-left: 10px;
+    }
+    .save-button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>ReadMate</h1>
+  <p>Enhance your reading experience with AI-powered explanations.</p>
+  <p><strong>How to Use:</strong></p>
+  <ul>
+    <li>Select any text on a webpage.</li>
+    <li>Right-click and choose <em>"Explain with AI"</em> from the context menu.</li>
+    <li>Receive a detailed explanation with key terms and examples.</li>
+  </ul>
+
+  <!-- Optional Settings Section -->
+  <!-- Uncomment if you implement settings functionality -->
+  <!--
+  <div class="settings">
+    <h2>Settings</h2>
+    <label>
+      Maximum Text Length:
+      <input type="number" id="maxTextLength" min="100" max="5000" value="1000">
+    </label>
+    <button class="save-button" id="saveSettings">Save Settings</button>
+  </div>
+  -->
+
+  <div class="version">
+    <p>Version 1.0</p>
+  </div>
+
+  <!-- Optional JavaScript for Settings -->
+  <!-- Uncomment if you implement settings functionality -->
+  <!--
+  <script>
+    // Load saved settings
+    document.addEventListener('DOMContentLoaded', () => {
+      chrome.storage.sync.get(['maxTextLength'], (result) => {
+        document.getElementById('maxTextLength').value = result.maxTextLength || 1000;
+      });
+    });
+
+    // Save settings
+    document.getElementById('saveSettings').addEventListener('click', () => {
+      const maxTextLength = parseInt(document.getElementById('maxTextLength').value, 10);
+      chrome.storage.sync.set({ maxTextLength }, () => {
+        alert('Settings saved!');
+      });
+    });
+  </script>
+  -->
+</body>
+</html>

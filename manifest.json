@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "ReadMate",
+  "version": "1.0",
+  "description": "Assists with English reading by providing explanations of selected text.",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "<all_urls>",
+    "https://<AZURE_OAI_API_ENDPOINT>.openai.azure.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["libs/marked.min.js", "contentScript.js"]
+    }
+  ],
+  "icons": {
+    "48": "icons/icon.png",
+    "96": "icons/icon.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "readmate@example.com",
+      "strict_min_version": "42.0"
+    }
+  },
+  "content_security_policy": "script-src 'self'; object-src 'self'"
+  
+}
