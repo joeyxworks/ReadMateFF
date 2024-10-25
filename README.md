@@ -5,6 +5,9 @@
 
 ReadMate is a browser extension that leverages the Azure OpenAI API to help language learners understand content and vocabulary on any webpage. The extension simplifies complex text, provides clear explanations, and offers definitions for challenging words or expressions, making language learning easier and more enjoyable.
 
+![image](https://github.com/user-attachments/assets/8c66efb9-0ffa-430b-a962-ddab04b87d46)
+
+
 ## Features
 
 - **Simplified Explanations**: Automatically generates easy-to-understand summaries of selected text to help you grasp the meaning quickly.
