@@ -11,6 +11,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     // Send a message to the background script to get the explanation
     chrome.runtime.sendMessage({ action: "getExplanation", text: selectedText });
+  } else if (request.action === "startNewExplanation") {
+    console.log('Starting a new explanation.');
+    // Append a separator before starting a new explanation
+    accumulatedContent += '\n\n<hr>\n\n'; // Two line breaks for separation
+    updateExplanationPopup(''); // Trigger a re-render
   } else if (request.action === "streamExplanation") {
     removeLoadingIndicator();
     // Update the explanation incrementally
@@ -130,7 +135,6 @@ function showExplanationPopup(explanation) {
     console.error("Error using marked.js:", e);
   }
 }
-
 
 function showErrorPopup(errorMessage) {
   // Create a popup element

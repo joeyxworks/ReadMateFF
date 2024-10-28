@@ -19,6 +19,9 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 // Listen for messages from content scripts
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "getExplanation") {
+    // Send a signal to start a new explanation
+    chrome.tabs.sendMessage(sender.tab.id, { action: "startNewExplanation" });
+
     // Send incremental updates to the content script
     const sendUpdate = (content) => {
       chrome.tabs.sendMessage(sender.tab.id, { action: "streamExplanation", content });
